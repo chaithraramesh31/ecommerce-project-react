@@ -12,11 +12,13 @@ function CheckoutPage({ cart }) {
   useEffect(() => {
     axios.get('/api/delivery-options?expand=estimatedDeliveryTime')
       .then((response) => {
+        console.log(response.data);
         setDeliveryOptions(response.data);
       });
 
     axios.get('/api/payment-summary')
       .then((response) => {
+        console.log(response.data);
         setPaymentSummary(response.data);
       });
   }, []);
