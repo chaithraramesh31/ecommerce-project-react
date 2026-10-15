@@ -10,11 +10,11 @@ function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/orders?expand=products')
-      .then((response) => {
-        console.log(response.data);
-        setOrders(response.data);
-      });
+    const getOrders = async () => {
+      const response = await axios.get('/api/orders?expand=products');
+      setOrders(response.data);
+    }
+    getOrders();
   }, []);
 
   return (
@@ -75,7 +75,7 @@ function OrdersPage({ cart }) {
                         </div>
 
                         <div className="product-actions">
-                          <a href="/tracking">
+                          <a href={`/tracking/${order.id}/${orderProduct.productId}`}>
                             <button className="track-package-button button-secondary">
                               Track package
                             </button>
