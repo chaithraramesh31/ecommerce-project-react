@@ -90,6 +90,12 @@
   flex-shrink: 0;
 }
 
+.header .close-button {
+  background-color: transparent;
+  color: white;
+  border: 0;
+}
+
 .header .search-icon {
   height: 20px;
   margin-left: 0px;

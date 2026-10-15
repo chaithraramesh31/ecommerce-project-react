@@ -119,6 +119,25 @@
   margin-left: 3px;
 }
 
+.checkout-page .product-quantity .update-quantity-input {
+  width: 50px;
+  display: none;
+}
+
+.checkout-page .product-quantity .save-quantity-link {
+  display: none;
+}
+
+.checkout-page .product-quantity.is-updating-quantity .update-quantity-input,
+.checkout-page .product-quantity.is-updating-quantity .save-quantity-link {
+  display: inline-block;
+}
+
+.checkout-page .product-quantity.is-updating-quantity .quantity-label,
+.checkout-page .product-quantity.is-updating-quantity .update-quantity-link {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .checkout-page .delivery-options {
     /* grid-column: 1 means this element will be placed
